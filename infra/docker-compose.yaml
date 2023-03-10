@@ -7,8 +7,9 @@ services:
       - /var/lib/postgresql/data/
     env_file:
       - ./.env
+
   web:
-    build: ../api_yamdb/
+    image: andreyapa/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -17,6 +18,7 @@ services:
       - db
     env_file:
       - ./.env
+
   nginx:
     image: nginx:1.21.3-alpine
 
@@ -34,5 +36,6 @@ services:
       - web
 
 volumes:
+  db_value:
   static_value:
   media_value:
