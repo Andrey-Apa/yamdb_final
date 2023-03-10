@@ -1,4 +1,4 @@
-![Build Status](https://github.com/Andrey-Apa/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
+![Build Status](https://github.com/Andrey-Apa/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # Проект YaMDb API Final
 Это групповой учебный проект Яндекс-Практикум
