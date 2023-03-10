@@ -1,4 +1,4 @@
-![YaMDb workflow](https://github.com/Andrey-Apa/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
+![Build Status](https://github.com/Andrey-Apa/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
 
 # Проект YaMDb API Final
 Это групповой учебный проект Яндекс-Практикум
@@ -48,11 +48,12 @@ docker-compose up --build
 ```bash
 sudo docker-compose exec web python manage.py loaddata fixtures.json
 ```
-5. Внутри контейнера web выполните миграции, создйте суперпользователя и собертите статику:
+5. Внутри контейнера web создайте и выполните миграции, создйте суперпользователя и собертите статику:
 ```bash
+sudo docker-compose exec web python manage.py makemigrations
 sudo docker-compose exec web python manage.py migrate
 sudo docker-compose exec web python manage.py createsuperuser
-sudo docker-compose exec web python manage.py collectstatic --no-input 
+sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 ## Документация к API
