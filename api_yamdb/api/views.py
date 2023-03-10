@@ -146,8 +146,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def get_title(self):
         """Получение произведения по id."""
         title_id = self.kwargs.get('title_id')
-        title = get_object_or_404(Title, pk=title_id)
-        return title
+        return get_object_or_404(Title, pk=title_id)
 
     def perform_create(self, serializer):
         serializer.save(
@@ -155,8 +154,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
             title=self.get_title())
 
     def get_queryset(self):
-        queryset = self.get_title().reviews.all()
-        return queryset
+        return self.get_title().reviews.all()
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -167,8 +165,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_review(self):
         """Получение отзыва по id."""
         review_id = self.kwargs.get('review_id')
-        review = get_object_or_404(Review, pk=review_id)
-        return review
+        return get_object_or_404(Review, pk=review_id)
 
     def perform_create(self, serializer):
         serializer.save(
@@ -176,5 +173,4 @@ class CommentViewSet(viewsets.ModelViewSet):
             review=self.get_review())
 
     def get_queryset(self):
-        queryset = self.get_review().comments.all()
-        return queryset
+        return self.get_review().comments.all()
