@@ -149,7 +149,7 @@ dmypy.json
 static/
 posts/static/
 media/
-static/data
+#static/data
 
 # папка с автозаполнением базы
-api_yamdb/reviews/management/commands/csv_import.py
+#api_yamdb/reviews/management/commands/csv_import.py
